@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos/all.min.css">
+    <link rel="stylesheet" href="estilos/index.css">
+    <title> ON-CALC </title>
+</head>
+
+<body onload="cargarCalculadora()">
+    <header class="contenedorTitulo">
+        <p class="titulo"> CALCULADORA ONLINE <i class="fas fa-calculator" style="margin-left: 5px;"></i></p>
+    </header>
+
+    <section class="calculadora">
+        <table class="contenedorBotones">
+            <tr>
+                <td colspan="5"><span id="consola"></span></td>
+            </tr>
+            <tr><td colspan="5"><input class="" type="button" value="M"></td>
+
+            </tr>
+            <tr>
+                <td><input class="teclaNumerica" type="button" value="7"></td>
+                <td><input class="teclaNumerica" type="button" value="8"></td>
+                <td><input class="teclaNumerica" type="button" value="9"></td>
+                <td><input class="teclaOperacion" type="button" value="+" id="btnSuma"></td>
+                <td><input class="teclaOperacion" type="button" value="^" id="btnPotencia"></td>
+
+            </tr>
+
+            <tr>
+                <td><input class="teclaNumerica" type="button" value="4"></td>
+                <td><input class="teclaNumerica" type="button" value="5"></td>
+                <td><input class="teclaNumerica" type="button" value="6"></td>
+                <td><input class="teclaOperacion" type="button" value="-" id="btnResta"></td>
+                <td><input class="teclaOperacion" type="button" value="√X" id="btnRaiz"></td>
+            </tr>
+
+            <tr>
+                <td><input class="teclaNumerica" type="button" value="1"></td>
+                <td><input class="teclaNumerica" type="button" value="2"></td>
+                <td><input class="teclaNumerica" type="button" value="3"></td>
+                <td><input class="teclaOperacion" type="button" value="x" id="btnMultiplicacion"></td>
+                <td><input class="teclaOperacion" type="button" value="%" id="btnPorcentaje"></td>
+            </tr>
+
+            <tr>
+                <td><input class="teclaNumerica" type="button" value="0"></td>
+                <td><input class="teclaNumerica" type="button" value="."></td>
+                <td><input type="button" value="C" id="btnReset"></td>
+                <td><input class="teclaOperacion" type="button" value="/" id="btnDivision"></td>
+                <td><input type="button" value="=" id="btnIgual"></td>
+            </tr>
+        </table>
+    </section>
+
+    <script src="js/index.js"></script>
+</body>
+</html>
