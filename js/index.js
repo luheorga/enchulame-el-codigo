@@ -1,6 +1,60 @@
-let numero1;
-let numero2;
-let operacion;
+class Calculadora {
+
+    constructor() {
+        this.consola = document.getElementById('consola');
+        this.igual = document.getElementById('btnIgual');
+        this.botonReset = document.getElementById('btnReset');
+    }
+
+    suscribirClickTeclasNumericas() {
+        const teclas = document.querySelectorAll('.teclaNumerica');
+        teclas.forEach(tecla => {
+            tecla.onclick = e => {
+                consola.textContent += tecla.value;
+            }
+        });
+    }
+
+    suscribirEventosClick() {
+
+        this.suscribirClickTecla('.teclaNumerica', tecla => {
+            this.consola.textContent += tecla.value;
+        });
+
+        this.suscribirClickTecla('.teclaOperacion', tecla => {
+            this.numero1 = this.consola.textContent;
+            this.operacion = tecla.value;
+            this.consola.textContent = '';
+        });
+
+        this.botonReset.onclick = e => {
+            this.resetear();
+        }
+
+        this.igual.onclick = e => {
+            this.numero2 = consola.textContent;
+            realizarOperacion();
+        }
+    }
+
+    suscribirClickTecla(selector, callback) {
+
+        const teclas = document.querySelectorAll(selector);
+
+        teclas.forEach(tecla => tecla.onclick(event => {
+            callback.call(this, tecla);
+        }));
+    }
+
+    resetear() {
+        this.consola = '';
+        this.numero1 = 0;
+        this.numero2 = 0;
+        this.operacion = '';
+    }
+
+}
+
 
 function cargarCalculadora() {
     let consola = document.getElementById('consola');
@@ -22,7 +76,7 @@ function cargarCalculadora() {
 
 function realizarOperacion() {
     let resultadoOperacion = 0;
-    switch(operacion) {
+    switch (operacion) {
         case "+":
             resultadoOperacion = parseFloat(numero1) + parseFloat(numero2);
             break;
@@ -33,8 +87,8 @@ function realizarOperacion() {
 
         case "x":
             resultadoOperacion = parseFloat(numero1) * parseFloat(numero2);
-            break; 
-            
+            break;
+
         case "/":
             resultadoOperacion = parseFloat(numero1) / parseFloat(numero2);
             break;
@@ -44,7 +98,7 @@ function realizarOperacion() {
             break;
 
         case "√X":
-            resultadoOperacion = Math.pow(numero2, (1/numero1));
+            resultadoOperacion = Math.pow(numero2, (1 / numero1));
             break;
 
         case "%":
@@ -58,10 +112,10 @@ function realizarOperacion() {
 function oprimirTeclaNumerica() {
     const teclas = document.querySelectorAll('.teclaNumerica');
     teclas.forEach(tecla => {
-        tecla.onclick = e =>{
+        tecla.onclick = e => {
             consola.textContent += tecla.value;
-        }  
-    });   
+        }
+    });
 }
 
 function oprimirTeclaOperacion() {
