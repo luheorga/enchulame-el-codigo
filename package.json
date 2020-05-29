@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/luheorga/enchulame-el-codigo/issues"
   },
-  "homepage": "https://github.com/luheorga/enchulame-el-codigo#readme"
+  "homepage": "https://github.com/luheorga/enchulame-el-codigo#readme",
+  "devDependencies": {
+    "jest": "^26.0.1"
+  }
 }
